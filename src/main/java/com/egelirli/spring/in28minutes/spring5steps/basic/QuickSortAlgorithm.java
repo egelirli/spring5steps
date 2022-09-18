@@ -1,4 +1,4 @@
-package com.egelirli.spring.in28minutes.spring5steps;
+package com.egelirli.spring.in28minutes.spring5steps.basic;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
