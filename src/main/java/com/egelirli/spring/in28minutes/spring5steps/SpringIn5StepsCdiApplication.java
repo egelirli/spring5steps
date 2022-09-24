@@ -22,15 +22,17 @@ public class SpringIn5StepsCdiApplication {
 		// BinarySearchImpl binarySearch =
 		// new BinarySearchImpl(new QuickSortAlgorithm());
 		// Application Context
-		ApplicationContext applicationContext = 
-				   new AnnotationConfigApplicationContext(SpringIn5StepsCdiApplication.class);
-				//SpringApplicatio.run(SpringIn5StepsCdiApplication.class, args);
-		
-		SomeCdiBusiness business = 
-				applicationContext.getBean(SomeCdiBusiness.class);
-		
-		
-		LOGGER.info("{} dao: {}",business, business.getSomeCdiDAO());
+		try (AnnotationConfigApplicationContext  applicationContext = 
+				   new AnnotationConfigApplicationContext(SpringIn5StepsCdiApplication.class)){
+			
+					//SpringApplicatio.run(SpringIn5StepsCdiApplication.class, args);
+			
+			SomeCdiBusiness business = 
+					applicationContext.getBean(SomeCdiBusiness.class);
+			
+			
+			LOGGER.info("{} dao: {}",business, business.getSomeCdiDAO());
+		}
 
 	}
 }
